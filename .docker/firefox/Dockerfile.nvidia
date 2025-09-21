@@ -10,7 +10,7 @@ RUN set -eux; apt-get update; \
     xz-utils bzip2 libgtk-3-0 libdbus-glib-1-2; \
     #
     # fetch latest release
-    wget -O /tmp/firefox-setup.tar.bz2 "${SRC_URL}"; \
+    wget --max-redirect 20 -O /tmp/firefox-setup.tar.bz2 "${SRC_URL}"; \
     mkdir /usr/lib/firefox; \
     tar -xzf /tmp/firefox-setup.tar.bz2 -C /usr/lib; \
     rm -f /tmp/firefox-setup.tar.bz2; \
