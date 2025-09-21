@@ -12,7 +12,7 @@ RUN set -eux; apt-get update; \
     # fetch latest release
     wget -O /tmp/firefox-setup.tar.bz2 "${SRC_URL}"; \
     mkdir /usr/lib/firefox; \
-    tar -xjf /tmp/firefox-setup.tar.bz2 -C /usr/lib; \
+    tar -xzf /tmp/firefox-setup.tar.bz2 -C /usr/lib; \
     rm -f /tmp/firefox-setup.tar.bz2; \
     ln -s /usr/lib/firefox/firefox /usr/bin/firefox; \
     #
